@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer test</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+    rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" 
+    crossorigin="anonymous">
+    <style>
+    *{
+        font-size: 32px;
+        font-family: "Roboto";
+        
+    }
+
+    body{
+        background-color: blue;
+    }
+    .timerContainer{
+        border-radius: 15px;
+        background: white;
+        margin: 8% 4% 0px;
+        display:flex;
+        border: 1px solid black;
+        justify-content: space-between;
+        flex-flow: wrap column;
+        align-content: center;
+        padding: 5% 0;
+        text-align: center;
+    }
+    .timerContainer > *{
+        padding: 10px 0;    
+    }
+
+    #completionCircles{
+        display: flex;
+        flex-flow: wrap row;
+        justify-content: space-around;
+    }
+
+    #walkOrRunGif{
+        width: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    #walkOrRun{
+        border-radius: 15px;
+        font-size: 80px;
+        font-family: "Montserrat" bold;
+    }
+    #startStop{
+        width: 100px;
+        margin: 0 auto;
+        border-radius: 15px;
+        border: black;
+        color:white;
+        background: blue;
+    }
+
+    #startStop:hover{
+        border-radius: 15px;
+        border: black;
+        color:white;
+        background:deepskyblue;
+
+    }
+
+    
+
+    @keyframes animationFrames{
+      10% {
+        background-color: blue;
+      }
+      100% {
+        background-color: white;
+      }
+    }
+
+    .flash {
+      animation: animationFrames 1s;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="timerContainer" id="timerContainer">
+        <h1>Couch to 5k: Week 1 (3x)</h1>
+        <div id="walkOrRun">Ready?</div>
+        <img  id="walkOrRunGif" src="catstart.gif">
+        <div id="walkOrRunSegmentTime">Walking for...</div>
+        <div id="totalTime">Time remaining...</div>
+        <div id="completionCircles"></div>
+        <button id="startStop" onclick="startStop()">Start</button>
+    </div>
+    <script src="./timerLogic.js"></script>
+</body>
+</html>
